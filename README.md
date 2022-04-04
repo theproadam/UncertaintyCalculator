@@ -38,4 +38,4 @@ Console.WriteLine("Max Error: " + result + " ± " + maxerror);
 ```
 
 ### Notes
-- Do not use any kind of optimization as the calculator is field order sensitive.
+- Do not use any kind of compiler/user optimization as the calculator is field order sensitive.
