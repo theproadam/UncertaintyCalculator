@@ -1,0 +1,6 @@
+c:\users\adam\documents\visual studio 2013\Projects\UncertaintyCalculator\UncertaintyCalculator\bin\Debug\UncertaintyCalculator.exe.config
+c:\users\adam\documents\visual studio 2013\Projects\UncertaintyCalculator\UncertaintyCalculator\obj\Debug\UncertaintyCalculator.csprojResolveAssemblyReference.cache
+c:\users\adam\documents\visual studio 2013\Projects\UncertaintyCalculator\UncertaintyCalculator\bin\Debug\UncertaintyCalculator.exe
+c:\users\adam\documents\visual studio 2013\Projects\UncertaintyCalculator\UncertaintyCalculator\bin\Debug\UncertaintyCalculator.pdb
+c:\users\adam\documents\visual studio 2013\Projects\UncertaintyCalculator\UncertaintyCalculator\obj\Debug\UncertaintyCalculator.exe
+c:\users\adam\documents\visual studio 2013\Projects\UncertaintyCalculator\UncertaintyCalculator\obj\Debug\UncertaintyCalculator.pdb
