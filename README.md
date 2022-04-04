@@ -6,7 +6,7 @@ First declare your class, the entry point should be `Compute()`. The fields are 
 ```c#
 class MyEquation
 {
-    //double [Equation Variable], [Equation Varialbe Uncertainty]
+    //double [Equation Variable], [Equation Variable Uncertainty]
     double thickness = 0.71, ut = 0.05;
     double L = 8.51, uL = 0.05;
     double W = 50.58, uW = 0.05;
