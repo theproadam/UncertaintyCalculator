@@ -26,14 +26,17 @@ namespace UncertaintyCalculator
             bestEst = 0;
             maxError = 0;
 
+            //Save the Base Reading
+            double lwr = dynamicInstance.Compute();
+
             for (int i = 0; i < t.Length / 2; i++)
             {
-                double lwr = dynamicInstance.Compute();
-
+                //Increment target varaible by Epsilon
                 Increment(i * 2, dynamicInstance, t);
                 double upr = dynamicInstance.Compute();
                 Deincrement(i * 2, dynamicInstance, t);
 
+                //Perform forward numerical differentiation and multiply by uncertainty 
                 double uncert = Read(i * 2 + 1, dynamicInstance, t) * (lwr - upr) / EPSILON;
 
                 bestEst += uncert * uncert;
@@ -42,7 +45,8 @@ namespace UncertaintyCalculator
 
             bestEst = Math.Sqrt(bestEst);
 
-            return dynamicInstance.Compute();
+            //return the answer
+            return lwr;
         }
 
         static void Increment(int index, dynamic d, MemberInfo[] t)
