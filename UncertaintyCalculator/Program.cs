@@ -29,20 +29,6 @@ namespace UncertaintyCalculator
         double h = 10, uh = 3;
         double k = 237, uk = 10;
 
-        public double Compute1()
-        {
-            double count = 10;
-
-            double P = 2 * (W + thickness);
-            double Ac = thickness * W;
-            double Le = L + Ac / P;
-
-            double area = count * P * Le / (1000 * 1000) + ((B * W) / (1000 * 1000) - count * thickness * W / (1000 * 1000));
-
-
-            return Ac;
-        }
-
         public double Compute()
         {
             double tBase = ReComputeT2(80.86);
@@ -102,61 +88,6 @@ namespace UncertaintyCalculator
 
     }
 
-    class TemperatureFinder
-    {
-        double v1 = 3.42, v1_ = 0.00244140625;
-        double v2 = 0.64, v2_ = 0.00244140625;
-
-        double v3 = 3.47, v3_ = 0.00244140625;
-        double v4 = 0.65, v4_ = 0.00244140625;
-
-        double v5 = 3.43, v5_ = 0.00244140625;
-        double v6 = 0.64, v6_ = 0.00244140625;
-
-
-        double t1 = 21.1, t1_ = 0.3;
-        double t2 = 100, t2_ = 5;
-
-
-
-
-        public double Compute()
-        {
-            double tFinAvrg = ReComputeT2(80.12);
-
-
-
-            return tFinAvrg;
-        }
-
-        double ReComputeT1(double T)
-        {
-            double voltage = (T - 118.1640288) / -28.38129496;
-
-            double slope = (t2 - t1) / (v2 - v1);
-            double b = -slope * v1 + t1;
-            return slope * voltage + b;
-        }
-
-        double ReComputeT2(double T)
-        {
-            double voltage = (T - 118.1861702) / -27.9787234;
-
-            double slope = (t2 - t1) / (v4 - v3);
-            double b = -slope * v3 + t1;
-            return slope * voltage + b;
-        }
-
-        double ReComputeT3(double T)
-        {
-            double voltage = (T - 118.0989247) / -28.27956989;
-
-            double slope = (t2 - t1) / (v6 - v5);
-            double b = -slope * v5 + t1;
-            return slope * voltage + b;
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
@@ -164,7 +95,7 @@ namespace UncertaintyCalculator
             double maxerror;
             double bestest;
 
-            double result = UncertaintyCalculator.ComputeUncertainties(typeof(TemperatureFinder), out bestest, out maxerror);
+            double result = UncertaintyCalculator.ComputeUncertainties(typeof(MyEquation), out bestest, out maxerror);
 
             Console.WriteLine("Best-Estimate: " + result + " ± " + bestest);
             Console.WriteLine("Max Error: " + result + " ± " + maxerror);
